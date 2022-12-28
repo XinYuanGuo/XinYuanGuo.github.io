@@ -4,17 +4,21 @@
 
 <head>
     
-    <title>Archive：2022/12 - Hexo</title>
+    <title>React-Query - Hexo</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/12/index.html">
+    <meta name="description" content="介绍 firtReact Query 是一个库，可以为任何类型的异步数据提供 ReactJs 状态管理功能。  React Query is often described as the missing data-fetching library for React, but in more technical terms, it makes fetching, caching, synchron">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-Query">
+<meta property="og:url" content="http://example.com/2022/12/28/first-article/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="介绍 firtReact Query 是一个库，可以为任何类型的异步数据提供 ReactJs 状态管理功能。  React Query is often described as the missing data-fetching library for React, but in more technical terms, it makes fetching, caching, synchron">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-28T09:29:06.000Z">
+<meta property="article:modified_time" content="2022-12-28T10:10:27.260Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -22,13 +26,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1672222300812">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1672222300797">
     
-    <link rel="stylesheet" href="/css/style.css?v=1672222300812">
+    <link rel="stylesheet" href="/css/style.css?v=1672222300797">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1672222300812">
+            <link rel="stylesheet" href="/custom.css?v=1672222300797">
         
     
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -249,19 +253,17 @@
     </div>
     <div id="nexmoe-content">
         <div class="nexmoe-primary">
-            <section class="nexmoe-posts">
-    
-    <div class="nexmoe-post">
-        <a href="/2022/12/28/first-article/">
-            
-                <div class="nexmoe-post-cover mdui-ripple"> 
-                    <img src="https://i.dawnlab.me/b5a7e61560facdd5b8aa9683fce147d7.png" alt="React-Query" loading="lazy">
-                    <h1>React-Query</h1>
-                </div>
-            
-        </a>
+            <div class="nexmoe-post">
 
-        <div class="nexmoe-post-meta">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://i.dawnlab.me/b5a7e61560facdd5b8aa9683fce147d7.png" alt="React-Query" loading="lazy">
+            <h1>React-Query</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
     <div class="nexmoe-rainbow">
         <a class="nexmoefont icon-calendar-fill">2022年12月28日</a>
         
@@ -277,44 +279,68 @@
     
 </div>
 
-        <article>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2022/12/28/hello-world/">
-            
-                <div class="nexmoe-post-cover mdui-ripple"> 
-                    <img src="https://i.dawnlab.me/b5a7e61560facdd5b8aa9683fce147d7.png" alt="Hello World" loading="lazy">
-                    <h1>Hello World</h1>
-                </div>
-            
-        </a>
+    <h2 id="介绍-firt"><a href="#介绍-firt" class="headerlink" title="介绍 firt"></a>介绍 firt</h2><p>React Query 是一个库，可以为任何类型的异步数据提供 ReactJs 状态管理功能。</p>
+<blockquote>
+<p>React Query is often described as the missing data-fetching library for React, but in more technical terms, it makes fetching, caching, synchronizing and updating server state in your React applications a breeze.</p>
+</blockquote>
+<p>理解：一般而言，开发人员要用自定义钩子来手动构建数据获取的状态，如 loading、error、success 等，React Query 帮助我们整合了这些状态，并且提供了缓存、对数据扩展处理、性能优化（如分页和延迟加载数据）、乐观更新等功能。</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="useQuery"><a href="#useQuery" class="headerlink" title="useQuery"></a>useQuery</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">fetchUsers</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&quot;https://jsonplaceholder.typicode.com/users&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> response = <span class="title function_">uesQuery</span>(<span class="string">&quot;users&quot;</span>, fetchUsers);</span><br></pre></td></tr></table></figure>
 
-        <div class="nexmoe-post-meta">
-    <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2022年12月28日</a>
-        
-        
-    <a><i class="nexmoefont icon-areachart"></i>约75字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要1分钟</a>
+<p>useQuery 接收两个参数</p>
+<ul>
+<li>第一个是唯一的键名，最好是字符串，也可以是数组或对象</li>
+<li>第二个是获取数据的异步函数</li>
+<li>第三个是一个可配置对象，可不传</li>
+</ul>
+<p>useQuery 返回值：</p>
+<ul>
+<li>data,</li>
+<li>error,</li>
+<li>failureCount,</li>
+<li>isError,</li>
+<li>isFetchedAfterMount,</li>
+<li>isFetching,</li>
+<li>isIdle,</li>
+<li>isLoading,</li>
+<li>isPreviousData,</li>
+<li>isStale,</li>
+<li>isSuccess,</li>
+<li>refetch,remove,</li>
+<li>status,</li>
+</ul>
+<h3 id="QueryClient"><a href="#QueryClient" class="headerlink" title="QueryClient"></a>QueryClient</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> queryClient = <span class="title function_">useQueryClient</span>();</span><br></pre></td></tr></table></figure>
 
-    </div>
+<ul>
+<li>queryClient.getQueryData<br>从缓存中获取数据</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = queryClient.<span class="title function_">getQueryData</span>(queryKey, 配置过滤对象);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>queryClient.setQueryData<br>设置缓存查询数据，如果在默认的 5 分钟的缓存时间中查询钩子没有利用该查询，该查询会被垃圾回收。</li>
+<li>queryClient.invalidateQueries<br>使匹配的查询失效并重新获取</li>
+</ul>
+<h3 id="Mutation"><a href="#Mutation" class="headerlink" title="Mutation"></a>Mutation</h3><p>突变，用来改变数据状态</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [</span><br><span class="line">  mutate,</span><br><span class="line">  &#123; status, isIdle, isLoading, isSuccess, isError, data, error, reset &#125;,</span><br><span class="line">] = <span class="title function_">useMutation</span>(mutationFn, &#123;</span><br><span class="line">  onMutate,</span><br><span class="line">  onSuccess,</span><br><span class="line">  onError,</span><br><span class="line">  onSettled,</span><br><span class="line">  throwOnError,</span><br><span class="line">  useErrorBoundary,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
     
-    
-    
-    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
     
 </div>
 
-        <article>
-            
-        </article>
-    </div>
-    
-</section>
-
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
             <div class="nexmoe-post-right">
               <div class="nexmoe-fixed">
                   <div class="nexmoe-tool"> 
@@ -322,6 +348,13 @@
                       
                         
                           
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-firt"><span class="toc-number">1.</span> <span class="toc-text">介绍 firt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#useQuery"><span class="toc-number">2.1.</span> <span class="toc-text">useQuery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QueryClient"><span class="toc-number">2.2.</span> <span class="toc-text">QueryClient</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutation"><span class="toc-number">2.3.</span> <span class="toc-text">Mutation</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
                           
                           
                       
@@ -356,7 +389,7 @@
 
  
 
-<script async src="/js/app.js?v=1672222300813"></script>
+<script async src="/js/app.js?v=1672222300802"></script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>
 
